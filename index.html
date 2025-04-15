@@ -1,135 +1,51 @@
-<!-- 在所有页面的</head>前添加 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'GA_MEASUREMENT_ID');
-</script>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>π节点服务站</title>
+<title>π节点网-派节点搭建网</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<!-- 导航栏 -->
+<!-- 导航栏（保持不变） -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 <div class="container">
-<a class="navbar-brand" href=" ">π节点服务</a >
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarNav">
+<a class="navbar-brand" href=" ">π派节点服务</a >
+<div class="collapse navbar-collapse">
 <ul class="navbar-nav">
-<li class="nav-item"><a class="nav-link" href="server.html">节点服务器</a ></li>
-<li class="nav-item"><a class="nav-link" href="faq.html">问题解答</a ></li>
-<li class="nav-item"><a class="nav-link" href="contact.html">联系我们</a ></li>
+<li class="nav-item">
+<a class="nav-link" href="#home">首页</a >
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#server">节点服务器</a >
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#faq">问题解答</a >
+</li>
+<li class="nav-item">
+<a class="nav-link" href="#contact">联系我们</a >
+</li>
 </ul>
 </div>
 </div>
 </nav>
 
-<!-- 首页内容 -->
-<div class="container my-5">
-<div class="hero-section text-center py-5">
-<h1 class="display-4">为PI NETWORK赋能</h1>
-<p class="lead">行业领先的π币节点服务站</p >
-<p class="text-muted">3年累计1000+高收益节点，稳定运行，提高节点算力！<br>
-专业电脑定制，让你的节点更胜一筹。<br>
-选择我们，您的派币之路更加轻松、安全。</p >
-</div>
+<!-- 动态内容容器 -->
+<div id="content-container" class="container my-5">
+<!-- 初始加载时显示首页内容 -->
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
-<!-- 头部与导航栏同首页，此处省略 -->
-<div class="container my-5">
-<h2 class="text-center mb-4">专业节点服务器展示</h2>
-<div class="row">
-<!-- 图片1 -->
-<div class="col-md-4 mb-4">
-< img src="main/server1.jpg" class="img-fluid rounded shadow" alt="服务器型号1">
-<div class="mt-2">
-<h5>高性能节点服务器</h5>
-<p class="text-muted">配置：E5-2696V4双路44核88线程/128G/1Tm.2固态</p >
-</div>
-</div>
-<!-- 图片2 -->
-<div class="col-md-4 mb-4">
-< img src="main/server2.jpg" class="img-fluid rounded shadow" alt="服务器型号2">
-<div class="mt-2">
-<h5>基础服务器</h5>
-<p class="text-muted">配置：E5-2680V4双路28核56线程/64G/1Tm.2固态</p >
-</div>
-</div>
-</div>
-</div>
-<!-- 头部与导航栏同首页 -->
-<div class="container my-5">
-<h2 class="text-center mb-4">常见问题解答</h2>
-<div class="list-group">
-<!-- 问题1 - 默认折叠 -->
-<a href=" " class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#q1">
-如何提高节点稳定性？
-</a >
-<div class="collapse" id="q1">
-<div class="card card-body">
-<p>建议采用以下方案：</p >
-<ul>
-<li>使用专业级电脑配置</li>
-<li>保持7x24小时不间断网络连接</li>
-<li>完美的节点配置方案</li>
-</ul>
-</div>
-</div><!-- 问题2 - 默认折叠 -->
-<a href="#" class="list-group-item list-group-item-action" data-bs-toggle="collapse" data-bs-target="#q2">
-节点收益如何计算？
-</a >
-<div class="collapse" id="q2">
-<div class="card card-body">
-<p>收益计算公式：</p >
-<code>每日收益 = 基础算力 × 提升值 × 奖励×24h</code>
-<p class="mt-2">详细参数请参考官方白皮书第4.2章节</p >
-</div>
-</div>
-</div>
-</div><!-- 头部与导航栏同首页 -->
-<div class="container my-5">
-<div class="row">
-<!-- 左侧联系方式 -->
-<div class="col-md-6">
-<h3>技术支持团队</h3>
-<div class="card mb-3">
-技术团队
-<div class="card-body">
-<h5 class="card-title">7x24小时服务</h5>
-<p class="card-text">
-<i class="bi bi-wechat"></i> 微信：Node314
+<div class="hero-section text-center py-5">
+<h1 class="display-4">为Pi Network赋能</h1>
+<p class="lead">行业领先的π币节点服务站</p >
+<p class="text-muted">
+3年累计1000+高收益节点，稳定运行，提高节点算力！<br>
+专业电脑定制，让你的节点更胜一筹。<br>
+选择我们，您的派币之路更加轻松、安全。
 </p >
-</div>
-</div>
-</div><!-- 右侧表单 -->
-<div class="col-md-6">
-<h3>在线留言</h3>
-<form action="https://formspree.io/f/xqknvlly" method="POST">
-<div class="mb-3">
-class="form-control" required>
-</div>
-<div class="mb-3">
-<label class="form-label">联系邮箱</label>
-<input type="295595908@qq.com" name="email" class="form-control" required>
-</div>
-<div class="mb-3">
-<label class="form-label">留言内容</label>
-<textarea class="form-control" name="message" rows="5" required></textarea>
-</div>
-<button type="submit" class="btn btn-primary">提交</button>
-</form>
-</div>
-</div>
 </div>
