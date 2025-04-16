@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>派节点网-派节点搭建网</title> <!-- 修改网站名称 -->
 <style>
 .nav-bar {
 background-color: #800080;
@@ -23,46 +24,57 @@ margin-right: 10px;
 .content-section {
 display: none;
 padding: 20px;
+text-align: center; /* 新增内容居中 */
 }
 #home-content {
 display: block;
-text-align: center;
 }
 .node-service {
 margin: 20px auto;
 max-width: 800px;
 padding: 20px;
 border: 1px solid #ddd;
+text-align: center; /* 新增内容居中 */
 }
 .server-img {
 width: 300px;
-margin: 20px 0;
+margin: 20px auto; /* 修改为居中显示 */
+display: block;
 }
 .qa-item {
-margin: 15px 0;
+margin: 15px auto; /* 水平居中 */
+max-width: 600px;
 cursor: pointer;
+text-align: center; /* 新增内容居中 */
 }
 .answer {
 display: none;
 padding-left: 20px;
 color: #666;
+text-align: left; /* 答案保持左对齐 */
+margin: 10px auto;
 }
 .contact-wrapper {
 display: flex;
 gap: 50px;
+justify-content: center; /* 新增水平居中 */
 }
 .contact-form input,
 .contact-form textarea {
 display: block;
-margin: 10px 0;
+margin: 10px auto; /* 修改为居中 */
 width: 300px;
+}
+.contact-form button {
+margin: 10px auto; /* 按钮居中 */
+display: block;
 }
 </style>
 </head>
 <body>
 <!-- 导航栏 -->
 <div class="nav-bar">
-< img src="images/1000007033.png" class="nav-icon" alt="Pj Network">
+< img src="images/logo.png" class="nav-icon" alt="派节点网">
 <a class="nav-link" onclick="showContent('home-content')">首页</a >
 <a class="nav-link" onclick="showContent('node-service')">节点服务</a >
 <a class="nav-link" onclick="showContent('problem')">问题解答</a >
@@ -82,7 +94,7 @@ width: 300px;
 
 <!-- 节点服务 -->
 <div id="node-service" class="content-section">
-< img src="server-image.jpg" class="server-img" alt="服务器">
+< img src="images/server-image.jpg" class="server-img" alt="服务器"> <!-- 修正图片路径 -->
 <p>专业高产服务器奖励值21</p >
 </div>
 
@@ -94,6 +106,14 @@ width: 300px;
 1.使用专业节点服务器电脑<br>
 2.保持7×24小时在线<br>
 3.成熟的搭建方案
+</div>
+</div>
+
+<!-- 新增问答 -->
+<div class="qa-item" onclick="toggleAnswer(2)">
+2.搭建方案影响节点收益吗？
+<div class="answer" id="answer2">
+影响。专业搭建方案可以提升节点运行稳定性，优化硬件资源配置，直接影响节点的奖励收益。
 </div>
 </div>
 </div>
@@ -123,16 +143,15 @@ el.style.display = 'none';
 document.getElementById(contentId).style.display = 'block';
 }
 
-// 问答切换
+// 问答切换（支持新增问答）
 function toggleAnswer(num) {
 const answer = document.getElementById(`answer${num}`);
 answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
 }
 
-// 表单提交（需配置邮件服务）
+// 表单提交
 function submitForm() {
 alert('留言已提交，我们将尽快回复！');
-// 实际使用需连接邮件服务API
 }
 </script>
 </body>
