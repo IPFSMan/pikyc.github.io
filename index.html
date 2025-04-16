@@ -1,84 +1,113 @@
-<meta name="title" content="Pi Network节点服务 | 行业领先的π币算力提升方案">
-<meta name="keywords" content="Pi节点,π币服务器,节点运维,高收益节点">
-<meta name="description" content="3年累计部署1000+高收益节点，提供专业服务器定制与运维服务，助您轻松提升算力收益">
+├── index.html # 首页
+├── server.html # 节点电脑服务器页面
+├── faq.html # 节点问题解答页面
+├── contact.html # 联系我们页面
+└── styles
+└── main.css # 公共样式文件
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>区块链节点服务平台</title>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<nav class="navbar">
+<ul>
+<li><a href=" ">首页</a ></li>
+<li><a href="server.html">节点服务器</a ></li>
+<li><a href="faq.html">问题解答</a ></li>
+<li><a href="contact.html">联系我们</a ></li>
+</ul>
+</nav>
+
+<!-- 页面具体内容区域 -->
+<div class="content">
+<!-- 各页面独有内容在此插入 -->
+</div>
+</body>
+</html>
+/* styles/main.css */
+body {
+background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+color: #ffffff;
+font-family: 'Microsoft YaHei', sans-serif;
+margin: 0;
+padding: 20px;
+}
 
 .navbar {
+background: rgba(0, 0, 0, 0.3);
+padding: 1rem;
+border-radius: 15px;
+margin-bottom: 2rem;
+}
+
+.navbar ul {
 display: flex;
-justify-content: space-around;
-background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
-padding: 1rem;
-position: fixed;
-width: 100%;
-top: 0;
-}
-.nav-item {
-color: white;
-padding: 0.8rem;
-transition: transform 0.3s;
-}
-.nav-item:hover { transform: scale(1.1); }
-@media (max-width: 768px) {
-.navbar { flex-direction: column; }
-}
-
-<div class="server-grid">
-< img src="server1.jpg" alt="双路E5服务器-支持1TB存储" class="responsive-img">
-<div class="specs">
-<h3>核心配置</h3>
-<ul>
-<li>CPU: Intel Xeon E5-2696 v4 ×2</li>
-<li>内存: DDR4 128G ECC</li>
-<li>存储: NVMe SSD 1TB RAID 10</li>
-</ul>
-</div>
-</div>
-
-.server-grid {
-display: grid;
-grid-template-columns: 1fr 1fr;
+justify-content: center;
 gap: 2rem;
-margin: 2rem;
+padding: 0;
+list-style: none;
 }
-.responsive-img {
-width: 100%;
-height: auto;
-border-radius: 8px;
-}
-<div class="faq-card" onclick="toggleAnswer(this)">
-<div class="question">Q: 节点同步失败怎么办？</div>
-<div class="answer">A: 检查端口31400-31409是否开放，参考<a href=" ">防火墙设置教程</a ></div>
-</div>
-.faq-card {
-background: #FFF5F5;
-border-radius: 12px;
-padding: 1rem;
-margin: 1rem 0;
-cursor: pointer;
-}
-.answer {
-display: none;
-padding-top: 1rem;
-color: #666;
-}
-function toggleAnswer(card) {
-const answer = card.querySelector('.answer');
-answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-}
-<form action="sendmail.php" method="POST">
-<input type="text" name="name" placeholder="姓名" required>
-<input type="email" name="email" placeholder="邮箱" required>
-<textarea name="message" placeholder="留言内容" rows="5"></textarea>
-<button type="submit">发送</button>
-</form>
-<?php
-$to = "295595908@qq.com";
-$subject = "新留言来自".$_POST['name'];
-$message = "发件人: ".$_POST['email']."\n\n内容:\n".$_POST['message'];
-$headers = "From: webmaster@example.com";
 
-if(mail($to, $subject, $message, $headers)) {
-echo "<script>alert('发送成功！'); window.history.back();</script>";
-} else {
-echo "<script>alert('发送失败，请直接联系微信Node314');</script>";
+.navbar a {
+color: #fff;
+text-decoration: none;
+padding: 0.5rem 1rem;
+border-radius: 8px;
+transition: background 0.3s;
 }
-?>
+
+.navbar a:hover {
+background: rgba(255, 255, 255, 0.1);
+}
+
+.content {
+max-width: 1200px;
+margin: 0 auto;
+padding: 2rem;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<!-- 复用公共头部 -->
+<meta charset="UTF-8">
+<title>联系我们 - 区块链节点服务</title>
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<nav class="navbar">...</nav> <!-- 保持与index.html相同的导航栏 -->
+
+<div class="content">
+<h1>联系我们</h1>
+<div class="contact-form">
+<form>
+<div class="form-group">
+<label>姓名：</label>
+<input type="text" required>
+</div>
+<div class="form-group">
+<label>邮箱：</label>
+<input type="email" required>
+</div>
+<button type="submit">发送消息</button>
+</form>
+</div>
+</div>
+</body>
+</html>
+@media (max-width: 768px) {
+.navbar ul {
+flex-direction: column;
+gap: 1rem;
+}
+
+.content {
+padding: 1rem;
+}
+}
