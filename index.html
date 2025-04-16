@@ -1,0 +1,84 @@
+<meta name="title" content="Pi Network节点服务 | 行业领先的π币算力提升方案">
+<meta name="keywords" content="Pi节点,π币服务器,节点运维,高收益节点">
+<meta name="description" content="3年累计部署1000+高收益节点，提供专业服务器定制与运维服务，助您轻松提升算力收益">
+
+.navbar {
+display: flex;
+justify-content: space-around;
+background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
+padding: 1rem;
+position: fixed;
+width: 100%;
+top: 0;
+}
+.nav-item {
+color: white;
+padding: 0.8rem;
+transition: transform 0.3s;
+}
+.nav-item:hover { transform: scale(1.1); }
+@media (max-width: 768px) {
+.navbar { flex-direction: column; }
+}
+
+<div class="server-grid">
+< img src="server1.jpg" alt="双路E5服务器-支持1TB存储" class="responsive-img">
+<div class="specs">
+<h3>核心配置</h3>
+<ul>
+<li>CPU: Intel Xeon E5-2696 v4 ×2</li>
+<li>内存: DDR4 128G ECC</li>
+<li>存储: NVMe SSD 1TB RAID 10</li>
+</ul>
+</div>
+</div>
+
+.server-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+margin: 2rem;
+}
+.responsive-img {
+width: 100%;
+height: auto;
+border-radius: 8px;
+}
+<div class="faq-card" onclick="toggleAnswer(this)">
+<div class="question">Q: 节点同步失败怎么办？</div>
+<div class="answer">A: 检查端口31400-31409是否开放，参考<a href=" ">防火墙设置教程</a ></div>
+</div>
+.faq-card {
+background: #FFF5F5;
+border-radius: 12px;
+padding: 1rem;
+margin: 1rem 0;
+cursor: pointer;
+}
+.answer {
+display: none;
+padding-top: 1rem;
+color: #666;
+}
+function toggleAnswer(card) {
+const answer = card.querySelector('.answer');
+answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+}
+<form action="sendmail.php" method="POST">
+<input type="text" name="name" placeholder="姓名" required>
+<input type="email" name="email" placeholder="邮箱" required>
+<textarea name="message" placeholder="留言内容" rows="5"></textarea>
+<button type="submit">发送</button>
+</form>
+<?php
+$to = "295595908@qq.com";
+$subject = "新留言来自".$_POST['name'];
+$message = "发件人: ".$_POST['email']."\n\n内容:\n".$_POST['message'];
+$headers = "From: webmaster@example.com";
+
+if(mail($to, $subject, $message, $headers)) {
+echo "<script>alert('发送成功！'); window.history.back();</script>";
+} else {
+echo "<script>alert('发送失败，请直接联系微信Node314');</script>";
+}
+?>
