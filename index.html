@@ -2,55 +2,77 @@
 <html>
 <head>
 <style>
-/* 修改导航栏颜色为紫色 */
 .nav-bar {
-background-color: #800080; /* 紫色 */
+background-color: #800080;
 padding: 15px;
 text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
 }
-
-/* 导航链接样式 */
 .nav-link {
 color: white;
 padding: 10px 20px;
 cursor: pointer;
 text-decoration: none;
 }
-
-/* 内容区域样式 */
+.nav-icon {
+height: 30px;
+margin-right: 10px;
+}
 .content-section {
 display: none;
 padding: 20px;
 }
-
-/* 默认显示的首页内容 */
 #home-content {
 display: block;
 text-align: center;
 }
-
-/* 图片中的节点服务样式 */
 .node-service {
 margin: 20px auto;
 max-width: 800px;
 padding: 20px;
 border: 1px solid #ddd;
 }
+.server-img {
+width: 300px;
+margin: 20px 0;
+}
+.qa-item {
+margin: 15px 0;
+cursor: pointer;
+}
+.answer {
+display: none;
+padding-left: 20px;
+color: #666;
+}
+.contact-wrapper {
+display: flex;
+gap: 50px;
+}
+.contact-form input,
+.contact-form textarea {
+display: block;
+margin: 10px 0;
+width: 300px;
+}
 </style>
 </head>
 <body>
-<!-- 紫色导航栏 -->
+<!-- 导航栏 -->
 <div class="nav-bar">
+< img src="1000007033.png" class="nav-icon" alt="Pj Network">
 <a class="nav-link" onclick="showContent('home-content')">首页</a >
 <a class="nav-link" onclick="showContent('node-service')">节点服务</a >
 <a class="nav-link" onclick="showContent('problem')">问题解答</a >
 <a class="nav-link" onclick="showContent('contact')">联系我们</a >
 </div>
 
-<!-- 首页默认内容 -->
+<!-- 首页内容 -->
 <div id="home-content" class="content-section">
 <div class="node-service">
-<h1>为PINETWORK赋能</h1>
+<h1>为Pi Network赋能</h1>
 <h2>行业领先的节点服务站</h2>
 <p>3年累计1000+高收益节点，稳定运行，提高节点算力！<br>
 专业电脑定制，让你的节点更胜一筹。<br>
@@ -58,28 +80,59 @@ border: 1px solid #ddd;
 </div>
 </div>
 
-<!-- 其他内容区块（根据你的需求填充内容） -->
+<!-- 节点服务 -->
 <div id="node-service" class="content-section">
-<!-- 节点服务具体内容 -->
+< img src="server-image.jpg" class="server-img" alt="服务器">
+<p>专业高产服务器奖励值21</p >
 </div>
 
+<!-- 问题解答 -->
 <div id="problem" class="content-section">
-<!-- 问题解答内容 -->
+<div class="qa-item" onclick="toggleAnswer(1)">
+1.如何增加节点收益？
+<div class="answer" id="answer1">
+1.使用专业节点服务器电脑<br>
+2.保持7×24小时在线<br>
+3.成熟的搭建方案
+</div>
+</div>
 </div>
 
+<!-- 联系我们 -->
 <div id="contact" class="content-section">
-<!-- 联系我们内容 -->
+<div class="contact-wrapper">
+<div>
+<h3>技术团队</h3>
+<p>微信：Node314</p >
+</div>
+<div class="contact-form">
+<h3>在线留言</h3>
+<input type="email" placeholder="295595908@qq.com" disabled>
+<textarea rows="5" placeholder="留言内容"></textarea>
+<button onclick="submitForm()">提交</button>
+</div>
+</div>
 </div>
 
 <script>
+// 内容切换
 function showContent(contentId) {
-// 隐藏所有内容区块
-document.querySelectorAll('.content-section').forEach(element => {
-element.style.display = 'none';
+document.querySelectorAll('.content-section').forEach(el => {
+el.style.display = 'none';
 });
-
-// 显示选中的内容
 document.getElementById(contentId).style.display = 'block';
+}
+
+// 问答切换
+function toggleAnswer(num) {
+const answer = document.getElementById(`answer${num}`);
+answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+}
+
+// 表单提交（需配置邮件服务）
+function submitForm() {
+alert('留言已提交，我们将尽快回复！');
+// 实际使用需连接邮件服务API
 }
 </script>
 </body>
