@@ -74,12 +74,10 @@ display: block;
 <body>
 <!-- 导航栏 -->
 <div class="nav-bar">
-<img
-src="my-website/images/logo.jpg"
-class="nav-icon">
+<img src="/images/logo.jpg" class="nav-icon" alt="网站Logo"> <!-- 修正路径和alt属性 -->
 <!-- 导航链接 -->
 <a class="nav-link" onclick="showContent('home-content')">首页</a >
-<a class="nav-link" onclick="showContent('node-service')">节点服务</a >
+<a class="nav-link" onclick="showContent('node-service')">节点服务器</a >
 <a class="nav-link" onclick="showContent('problem')">问题解答</a >
 <a class="nav-link" onclick="showContent('contact')">联系我们</a >
 </div>
@@ -95,10 +93,9 @@ class="nav-icon">
 </div>
 </div>
 
-<!-- 节点服务 -->
+<!-- 节点服务器 -->
 <div id="node-service" class="content-section">
-< img src="file:///C:/users/Administrator/Desktop/my-website/images/server-image.jpg" class="nav-icon"
-><!-- 修正图片路径 -->
+<img src="images/server-image.jpg" class="nav-icon"alt="服务器图片"> <!-- 修正图片路径和语法 -->
 <p>专业高产服务器奖励值21</p >
 </div>
 
