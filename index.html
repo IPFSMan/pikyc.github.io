@@ -74,7 +74,12 @@ display: block;
 <body>
 <!-- 导航栏 -->
 <div class="nav-bar">
-<img src="pikyc.github.io/logo.png" class="nav-icon">
+<img
+src="https://pikyc.github.io/logo.png"
+class="nav-icon"
+alt="派节点网Logo"
+onerror="this.style.display='none'" <!-- 添加错误处理 -->
+>
 <!-- 导航链接 -->
 <a class="nav-link" onclick="showContent('home-content')">首页</a >
 <a class="nav-link" onclick="showContent('node-service')">节点服务</a >
@@ -95,7 +100,8 @@ display: block;
 
 <!-- 节点服务 -->
 <div id="node-service" class="content-section">
-< img src="pikyc.github.io/images/server-image.jpg" class="server-img" alt="服务器"> <!-- 修正图片路径 -->
+< img src="https://pikyc.github.io/server-image.jpg" onerror="this.style.display='none'" <!-- 添加错误处理 -->
+><!-- 修正图片路径 -->
 <p>专业高产服务器奖励值21</p >
 </div>
 
